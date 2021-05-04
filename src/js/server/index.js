@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser';
 import restana from 'restana';
+import cors from 'cors';
 
 function setup () {
   let app;
@@ -42,6 +43,17 @@ function setup () {
       "customerAssociations": []
     });
   });
+
+  app.all ('*', (req, res) => {
+    res.send ({
+      message: 'This is a generic endpoint',
+    });
+  })
+
+  const port = process.env.PORT || 4500;
+  app.start (port).then (() => {
+    console.log ('Server start at port:', port);
+  })
 }
 
 setup ();
