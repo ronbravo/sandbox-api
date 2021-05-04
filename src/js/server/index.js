@@ -50,7 +50,7 @@ function setup () {
     });
   })
 
-  const port = process.env.PORT || 4500;
+  const port = process.env.APP_PORT || 8080;
   app.start (port).then (() => {
     console.log ('Server start at port:', port);
   })
