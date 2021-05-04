@@ -54,7 +54,7 @@ function setup () {
 
     let port;
 
-    port= process.env.APP_PORT;
+    port= process.env.PORT;
     if (!port) { port = 8080 }
 
     app.start (port).then (() => {
